@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Stuiterende Ambulances</title>
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+    <a-assets>
+        <a-asset-item
+            id="ambulanceModel"
+            src="kenney_car-kit/Models/GLB/ambulance.glb">
+        </a-asset-item>
+    </a-assets>
+    <a-sky color="#87CEEB"></a-sky>
+    <a-entity
+        gltf-model="#ambulanceModel"
+        position="-3 1 -5"
+        scale="1 1 1"
+        animation="
+            property: position;
+            from: -3 1 -5;
+            to: -3 2 -5;
+            dur: 700;
+            dir: alternate;
+            loop: true;
+            easing: easeInOutQuad">
+    </a-entity>
+    <a-light
+        type="ambient"
+        color="#ff0000"
+        intensity="1.5">
+    </a-light>
+    <a-entity
+        gltf-model="#ambulanceModel"
+        position="0 1 -5"
+        scale="1 1 1"
+        animation="
+            property: position;
+            from: 0 1 -5;
+            to: 0 2 -5;
+            dur: 800;
+            dir: alternate;
+            loop: true;
+            easing: easeInOutQuad">
+    </a-entity>
+    <a-light
+        type="directional"
+        color="#00ff00"
+        intensity="2"
+        position="0 5 -2">
+    </a-light>
+
+
+    <!-- AMBULANCE 3 -->
+    <a-entity
+        gltf-model="#ambulanceModel"
+        position="3 1 -5"
+        scale="1 1 1"
+        animation="
+            property: position;
+            from: 3 1 -5;
+            to: 3 2 -5;
+            dur: 600;
+            dir: alternate;
+            loop: true;
+            easing: easeInOutQuad">
+    </a-entity>
+    <a-light
+        type="point"
+        color="#0000ff"
+        intensity="5"
+        distance="10"
+        position="3 3 -4">
+    </a-light>
+    <a-camera position="0 1.6 0"></a-camera>
+</a-scene>
+</body>
+</html>
